@@ -3,25 +3,25 @@ pipeline {
       stages {
         stage ('BUILD') {
             steps {
-              echo 'this is BUild stage'
+              echo "this is BUild stage"
                 sh '''
                 sleep 5
                 exit 0
                 '''
             }
         }
-       stage ('parallel') {
+       stage ('Test parallel') {
        parallel {
         stage ('test on CHROME') {
             steps {
-              echo 'this is test on CHROME Browser'
+              echo "this is test on CHROME Browser"
                 sh 'sleep 5'
             }
         } 
         
         stage ('test on SAFARI') {
             steps {
-              echo 'this is test on SAFARI Browser'
+              echo "this is test on SAFARI Browser"
                 sh 'sleep 5'
             }
         } 
@@ -31,25 +31,25 @@ pipeline {
        parallel {
         stage ('server1') {
             steps {
-              echo 'this is test on Deploy to server1'
+              echo "this is test on Deploy to server1"
                 sh 'sleep 5'
             }
         } 
         stage ('server2') {
             steps {
-              echo 'this is test on Deploy to server2'
+              echo "this is test on Deploy to server2"
                 sh 'sleep 5'
             }
         } 
          stage ('server3') {
             steps {
-              echo 'this is test on Deploy to server3'
+              echo "this is test on Deploy to server3"
                 sh 'sleep 5'
             }
         } 
-        stage ('server48') {
+        stage ('server4') {
             steps {
-              echo 'this is test on Deploy to server4'
+              echo "this is test on Deploy to server4"
                 sh 'sleep 5'
             }
         } 
