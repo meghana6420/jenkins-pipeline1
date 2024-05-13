@@ -9,11 +9,17 @@ sh 'sleep 5'
 }
 }
 stage ('Test') {
-agent {
-  label 'jenkins'
-}
+agent {label 'jenkins'}
 steps {
-echo "this is DEploy stage"
+echo "this is Test stage"
+sh 'sleep 5'
+}
+}
+stage ('DEPLOY') {
+agent {label 'master'}
+steps {
+echo "this is Build stage"
+sh 'sleep 5'
 }
 }
 }
