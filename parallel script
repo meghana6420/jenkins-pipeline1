@@ -1,5 +1,8 @@
 pipeline {
   agent any;
+environment {
+NAME='MEGHANA'
+}
       stages {
         stage ('BUILD') {
             steps {
