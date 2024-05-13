@@ -7,7 +7,7 @@ steps {
 echo "this is BUILD stage"
 }
 }
-stage ('Deploy')
+stage ('Deploy') {
 steps {
 echo "this is DEploy stage"
 }
