@@ -6,9 +6,10 @@ NAME='MEGHANA'
       stages {
         stage ('BUILD') {
             steps {
-              echo "this is BUild stage"
+              echo "$NAME"
                 sh '''
                 sleep 5
+               $NAME
                 exit 0
                 '''
             }
