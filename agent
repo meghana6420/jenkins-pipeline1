@@ -2,13 +2,16 @@ pipeline {
 agent none
 stages {
 stage ('BUILD') {
-agent (Label slave1)
-steps {
+agent any
+steps { 
 echo "this is BUILD stage"
+sh 'sleep 5'
 }
 }
-stage ('Deploy') {
-agent (Label slave2)
+stage ('Test') {
+agent {
+  label 'jenkins'
+}
 steps {
 echo "this is DEploy stage"
 }
