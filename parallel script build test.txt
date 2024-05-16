@@ -1,0 +1,50 @@
+pipeline {
+	ageny any;
+		stages {
+                   stage (Build parallel) {
+		     parallel {
+		      stage (BUILD stage1) {
+			steps {
+			  echo "this is BUILD stage1"
+		      } 
+		   }
+                 }
+	      }
+	   }
+	}
+                   stage (BUILD stage2) {
+			steps {
+			  echo "this is BUILD stage2"
+	           } 
+		}
+                   stage (TEST parallel)
+	            parallel {
+		    stage (TEST on chrome) {
+			steps {
+			echo "this is test on chrome browser"
+			
+		}
+	}
+
+        } 
+		stage (TEST on safari) {
+			steps {
+			echo "this is test on safari browser"
+			
+			}
+		}
+
+		
+                  stage (DEPLOY stage) {
+			steps {
+			echo "this is deploy stage"
+			
+		}
+	}
+
+		
+
+
+
+
+
